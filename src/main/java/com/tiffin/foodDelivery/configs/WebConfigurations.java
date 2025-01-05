@@ -20,7 +20,7 @@ public class WebConfigurations implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(@NonNull CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedMethods("GET", "POST", "PUT", "DELETE")
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 // TODO: need to check why localhost is not working on office computer?
                 .allowedOrigins("http://localhost:3000", "http://192.168.24.101:3000", "http://localhost:5173", "http://192.168.1.4:5173")
                 .allowedHeaders("Authorization", "Cache-Control", "Content-Type")
