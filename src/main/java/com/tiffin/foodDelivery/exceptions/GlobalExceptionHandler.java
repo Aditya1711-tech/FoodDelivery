@@ -2,6 +2,7 @@ package com.tiffin.foodDelivery.exceptions;
 
 import com.tiffin.foodDelivery.dtos.common.ResponseDTO;
 import com.tiffin.foodDelivery.exceptions.client.LoginFailedException;
+import com.tiffin.foodDelivery.exceptions.client.RegistrationFailedException;
 import com.tiffin.foodDelivery.exceptions.common.BaseException;
 import org.apache.coyote.BadRequestException;
 import org.springframework.http.HttpStatus;
@@ -17,6 +18,12 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(LoginFailedException.class)
     @ResponseStatus(HttpStatus.CONFLICT)
     public ResponseEntity<ResponseDTO<String>> handleEmailAlreadyExistsException(LoginFailedException ex) {
+        return buildResponse(ex.getMessage(), ex.getErrorCode(), HttpStatus.CONFLICT);
+    }
+
+    @ExceptionHandler(RegistrationFailedException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ResponseEntity<ResponseDTO<String>> handleEmailAlreadyExistsException(RegistrationFailedException ex) {
         return buildResponse(ex.getMessage(), ex.getErrorCode(), HttpStatus.CONFLICT);
     }
 
