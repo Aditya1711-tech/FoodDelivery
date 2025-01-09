@@ -61,5 +61,16 @@ public class MessageConstants {
 
     }
 
+    public static final class FileUpload {
+        public static final String FILE_NOT_ALLOWED = "File extension not";
+    }
+
+    public static final class Item {
+        public static final String ITEM_CREATED = "Item created successfully";
+        public static final String ITEM_FOUND = "Item found successfully";
+        public static final String ITEM_UPDATED = "Item updated successfully";
+        public static final String ITEM_NOT_FOUND = "Item not found";
+    }
+
 }
 

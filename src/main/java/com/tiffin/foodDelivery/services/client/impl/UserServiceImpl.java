@@ -86,8 +86,8 @@ public class UserServiceImpl implements UserService {
         if(!userRepository.existsById(userId)) {
             return "unknown";
         }
-        Optional<String> foundUser = userRepository.findUsernameByUserId(userId);
-        return foundUser.orElse(null);
+        Optional<User> foundUser = userRepository.findUsernameByUserId(userId);
+        return foundUser.isPresent() ? foundUser.get().getName() : null;
     }
 
 }

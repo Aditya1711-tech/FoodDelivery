@@ -15,7 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class ItemDTO extends NamedDTO {
     @JsonIgnore
     private MultipartFile image;
-    private Double price = 0.0;
-    private Integer quantity = 0;
+    private Double price;
+    private Integer quantity;
     private String imageUrl;
 }

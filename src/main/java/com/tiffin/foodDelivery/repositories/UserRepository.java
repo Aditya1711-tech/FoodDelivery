@@ -13,7 +13,7 @@ public interface UserRepository extends MongoRepository<User, String> {
     // Find the user by their ID
     Optional<User> findUserById(String userId);
 
-    // Find only the username (email in this case) by user ID
-    @Query(value = "{ '_id': ?0 }", fields = "{ 'email': 1, '_id': 0 }")
-    Optional<String> findUsernameByUserId(String userId);
+    // Find only the username by user ID
+    @Query(value = "{ '_id': ?0 }", fields = "{ 'name': 1, '_id': 0 }")
+    Optional<User> findUsernameByUserId(String userId);
 }
